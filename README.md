@@ -12,6 +12,9 @@ This site allows you to browse the most popular movies and actors from the publi
 - CSS Grid
 - CSS Flexbox
 
+## NOTES
+I applied unit tests to ensure that the components and functionalities work as expected. This allowed me to improve the stability and maintainability of the application. It also provided an opportunity to apply all my knowledge as a junior developer in creating robust and reliable code.
+
 ## How to run the program?
 1. Install project dependencies
 npm install
@@ -19,4 +22,5 @@ npm install
 2. Now you can run the program
 npm start
 
-##
+## My link
+https://github.com/patycrack/Test
