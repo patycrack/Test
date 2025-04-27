@@ -2,8 +2,8 @@ import { delay, call, put, takeLatest, select } from "redux-saga/effects";
 import {
   getMovies,
   getMoviesByQuery,
-} from "../../common/apiData/apiRequests";
-import { loadingDelay } from "../../common/states/loadingDelay";
+} from "../../common/apiData/apiRequests"; // Importa las funciones para obtener las películas
+import { loadingDelay } from "../../common/states/loadingDelay"; // Importa la constante de delay para simular carga
 import {
   fetchMovies,
   fetchMoviesError,
@@ -12,21 +12,24 @@ import {
   selectQuery,
   setPage,
   setQuery,
-} from "./movieListSlice";
+} from "./movieListSlice"; // Importa las acciones y selectores del slice de movieList
 
+// Saga para manejar la carga de películas
 function* fetchMoviesHandler() {
   try {
-    yield delay(loadingDelay); //for loader demo purpose
+    yield delay(loadingDelay); // Simula un retraso en la carga para mostrar un loader
 
-    const page = yield select(selectPage);
-    const query = yield select(selectQuery);
+    const page = yield select(selectPage);  // Obtiene el número de página desde el estado
+    const query = yield select(selectQuery);  // Obtiene la query de búsqueda desde el estado
 
+    // Llama a la API dependiendo de si hay una búsqueda o no
     const movies = yield !query
-      ? call(getMovies, page)
-      : call(getMoviesByQuery, query, page);
-    yield put(fetchMoviesSuccess(movies));
+      ? call(getMovies, page) // Si no hay búsqueda, obtiene todas las películas
+      : call(getMoviesByQuery, query, page); // Si hay búsqueda, obtiene películas filtradas por la query
+
+    yield put(fetchMoviesSuccess(movies));  // Despacha la acción de éxito con las películas obtenidas
   } catch (error) {
-    yield put(fetchMoviesError());
+    yield put(fetchMoviesError());  // Si ocurre un error, despacha la acción de error
   }
 }
 
