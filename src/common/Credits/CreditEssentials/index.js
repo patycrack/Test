@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+// Contenedor principal para la sección de créditos
 export const CreditContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 `;
 
+// Título de la sección de créditos, con tamaños adaptativos según la pantalla
 export const CreditHeader = styled.h2`
   margin: 0;
   margin-bottom: 32px;
@@ -24,8 +26,9 @@ export const CreditHeader = styled.h2`
   }
 `;
 
+// Contenedor en forma de grid para mostrar tarjetas de créditos (actor/película) adaptándose al tamaño de pantalla
 export const CreditTiles = styled.div`
- display: grid;
+  display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 24px;
 
