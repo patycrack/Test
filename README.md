@@ -5,12 +5,12 @@ This site allows you to browse the most popular movies and actors from the publi
 - React app
 - React Hooks
 - React Router
-- Redux (Toolkit)
-- API (fetch)
+- React Context
+- Axios
+- API public (fetch)
 - JavaScript: ES6+
 - Responsive Web Design
-- CSS Grid
-- CSS Flexbox
+- Tailwind CSS
 
 ## NOTES
 I applied unit tests to ensure that the components and functionalities work as expected. This allowed me to improve the stability and maintainability of the application. It also provided an opportunity to apply all my knowledge as a junior developer in creating robust and reliable code.
